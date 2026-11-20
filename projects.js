@@ -1,7 +1,7 @@
 /* ==========================================================================
    PORTFOLIO SETTINGS — the only file you edit to add or change projects.
 
-   Adding a finished UI (03–05):
+   Adding a finished UI (04–05):
      1. Put its built files in  projects/<folder>/  (with an index.html).
      2. Take screenshots of 2–6 of its screens and put them in assets/previews/.
      3. Fill in its entry below: title, category, details, url, background and a
@@ -102,7 +102,39 @@ window.PORTFOLIO = {
     },
 
     /* ---- Placeholders: replace when the files for these UIs are added ---- */
-    { id: "03", slug: "project-03", placeholder: true, title: "Project 03", category: "Awaiting files", background: { colors: ["#625b53", "#2c2925"] }, accent: "#a89f94" },
+    {
+      id: "03",
+      slug: "pocket-universe",
+      title: "Pocket Universe",
+      native: "A whole world, made by you.",
+      category: "3D world builder",
+      year: "2026",
+      description:
+        "A cosy 3D world-building app. Pick a floating island, then shape the land, plant forests, build cottages and change the sky. Every universe saves itself and can be exported.",
+      details: ["3D world builder", "Web application", "Desktop 1440 × 900", "", "Built with", "React · Three.js"],
+      details2: ["Interactions", "Place · Sculpt · Paint", "", "Data", "Autosaved in browser"],
+      meta1: ["Creative tool", "10 floating worlds", "2026"],
+      meta2: ["React · Three.js", "1440 × 900", "6 screens"],
+      url: "projects/03-pocket-universe/index.html",
+      deviceRatio: 1440 / 900,
+      deviceSize: [1440, 900],            // landscape — the preview device turns sideways automatically
+      background: {
+        day: { image: "assets/bg/ui03-world-day.jpg", imageSmall: "assets/bg/ui03-world-day-sm.jpg" },
+        night: { image: "assets/bg/ui03-world-night.jpg", imageSmall: "assets/bg/ui03-world-night-sm.jpg" },
+        position: "64% 50%",
+      },
+      accent: "#e7a3cf",
+      // a 3D app: the bubbles show screenshots, and "Enter experience" opens the real, running app
+      slides: [
+        { name: "Welcome", short: "Welcome", native: "Somewhere in the universe", img: "assets/previews/ui03-welcome.jpg", detail: "assets/previews/ui03-welcome-detail.jpg", tint: "saturate(.9) brightness(.94)" },
+        { name: "My Universes", short: "Universes", native: "Ten worlds, months in the making", img: "assets/previews/ui03-universes.jpg", detail: "assets/previews/ui03-universes-detail.jpg", tint: "none" },
+        { name: "Choose your world", short: "Create", native: "Six biomes to start from", img: "assets/previews/ui03-create.jpg", detail: "assets/previews/ui03-create-detail.jpg", tint: "saturate(1.08) brightness(1.03)" },
+        { name: "Moonberry Valley", short: "Build", native: "Plant, build and shape the land", img: "assets/previews/ui03-moonberry.jpg", detail: "assets/previews/ui03-moonberry-detail.jpg", tint: "hue-rotate(-22deg) saturate(1.12)" },
+        { name: "Frostfall Hollow", short: "Weather", native: "Night, snow and lantern light", img: "assets/previews/ui03-frostfall.jpg", detail: "assets/previews/ui03-frostfall-detail.jpg", tint: "hue-rotate(18deg) brightness(.9)" },
+        { name: "Cinematic mode", short: "Cinematic", native: "Your world, on the big screen", img: "assets/previews/ui03-lantern.jpg", detail: "assets/previews/ui03-lantern-detail.jpg", tint: "brightness(.86) saturate(.92)" },
+      ],
+    },
+
     { id: "04", slug: "project-04", placeholder: true, title: "Project 04", category: "Awaiting files", background: { colors: ["#56605d", "#272c2b"] }, accent: "#98a39f" },
     { id: "05", slug: "project-05", placeholder: true, title: "Project 05", category: "Awaiting files", background: { colors: ["#5c5763", "#29272d"] }, accent: "#a29dab" },
   ],

@@ -1111,6 +1111,24 @@ body.night .dnsw .knob .s{opacity:0;transform:rotate(90deg) scale(.6)}body.night
     P.forEach(function (p) { p.slides.forEach(function (s) { [s.img, s.detail].filter(Boolean).forEach(function (u) { var im = new Image(); im.src = u; }); }); });
   });
 })();
+
+/* keep the detail columns clear of the big project number (wide digits like 03 or 04 would touch them) */
+(function () {
+  function fit(root) {
+    (root.querySelectorAll ? root : document).querySelectorAll(".bignum").forEach(function (n) {
+      var sc = n.parentNode, c1 = sc.querySelector(".col.c1"), c2 = sc.querySelector(".col.c2");
+      if (!c1) return;
+      c1.style.left = ""; if (c2) c2.style.left = "";
+      var need = n.offsetLeft + n.offsetWidth + 16 - c1.offsetLeft;
+      if (need > 0) { c1.style.left = c1.offsetLeft + need + "px"; if (c2) c2.style.left = c2.offsetLeft + need + "px"; }
+    });
+  }
+  new MutationObserver(function (ms) { ms.forEach(function (m) { m.addedNodes.forEach(function (a) { if (a.nodeType === 1 && (a.matches(".bignum") || a.querySelector(".bignum"))) fit(a.parentNode || a); }); }); })
+    .observe(document.body, { childList: true, subtree: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fit(document); });
+  addEventListener("resize", function () { fit(document); });
+  fit(document);
+})();
 </script>
 </body>
 </html>
