@@ -13,12 +13,14 @@ index.html          the portfolio (cover, swipe, Enter Experience, in-experience
 projects.js         ← the only file you edit: names, text, previews, links for all 5 projects
 assets/bg/          background images per project
 assets/previews/    screenshots used on the cover
-projects/01-mindspace/         UI 01 — Mindspace (built React app, unchanged build output)
-projects/02-krishi-dharohar/   UI 02 — Krishi Dharohar kiosk, unchanged
-projects/03-pocket-universe/   UI 03 — Pocket Universe (built React + Three.js app)
+projects/01-scenecraft/        UI 01 — SceneCraft, AI film pre-production studio (built React app)
+projects/02-pocket-universe/   UI 02 — Pocket Universe (built React + Three.js app)
+projects/03-impossible-path/   UI 03 — The Impossible Path, optical-illusion puzzle game (built React + Three.js)
+projects/04-mindspace/         UI 04 — Mindspace (built React app, unchanged build output)
+projects/05-krishi-dharohar/   UI 05 — Krishi Dharohar kiosk, unchanged
 ```
 
-## Adding UI 04–05
+## Adding or replacing a UI
 1. Copy the project's built files into `projects/03-your-name/` (it needs an `index.html`).
 2. Take screenshots of 2–6 of its screens and put them in `assets/previews/`.
 3. In `projects.js`, fill in that project's entry using project 01 as the example:
@@ -35,7 +37,7 @@ The cover, swipe order, counter and Enter Experience pick it up automatically.
 The ☀/☾ switch in the top bar (or the D key) changes only the background between a day and a
 night version; the visitor's choice is remembered. Set the starting mode with `defaultMode`
 in `projects.js`. Each background has a `day` and a `night` image:
-`assets/bg/ui01-space-day.jpg` / `ui01-space-night.jpg` (Mindspace), `assets/bg/ui02-field-day.jpg` / `ui02-field-night.jpg` (Krishi Dharohar) and `assets/bg/ui03-world-day.jpg` / `ui03-world-night.jpg` (Pocket Universe) (plus `-sm` versions for
+`ui-sc-dawn-day.jpg` / `ui-sc-city-night.jpg` (SceneCraft), `ui03-world-day.jpg` / `ui03-world-night.jpg` (Pocket Universe), `ui-ip-day.jpg` / `ui-ip-night.jpg` (The Impossible Path), `ui01-space-day.jpg` / `ui01-space-night.jpg` (Mindspace) and `ui02-field-day.jpg` / `ui02-field-night.jpg` (Krishi Dharohar), all in `assets/bg/` (plus `-sm` versions for
 phones). To use real photographs, replace these files with licensed photos (about 2400 × 1500 px)
 and keep the same names. Projects with only one image get an automatic night version.
 

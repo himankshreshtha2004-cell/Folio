@@ -526,7 +526,7 @@ body.night .dnsw .knob .s{opacity:0;transform:rotate(90deg) scale(.6)}body.night
   function nextInfo(pi, si) {
     var p = P[pi];
     if (si < p.slides.length - 1) { var s = p.slides[si + 1]; return { kind: "slide", title: s.short || s.name, sub: "Next screen", img: s.detail || s.img }; }
-    if (pi < N - 1) { var q = P[pi + 1], qs = q.slides[0]; return { kind: "project", title: q.placeholder ? q.id : q.title.split(" ")[0], sub: "Next project · " + q.id, img: qs.detail || qs.img, ph: q.placeholder }; }
+    if (pi < N - 1) { var q = P[pi + 1], qs = q.slides[0]; return { kind: "project", title: q.placeholder ? q.id : (q.shortTitle || q.title.split(" ")[0]), sub: "Next project · " + q.id, img: qs.detail || qs.img, ph: q.placeholder }; }
     return { kind: "end", title: "Index", sub: "Back to start", img: null, ph: true };
   }
   function supportHTML(pi, si) {
@@ -605,7 +605,7 @@ body.night .dnsw .knob .s{opacity:0;transform:rotate(90deg) scale(.6)}body.night
     var p = P[sec - 1], sl = p.slides[si];
     d.innerHTML = '<div class="thumb"><div class="it">' + (sl.img ? '<img src="' + esc(sl.img) + '" alt="" draggable="false">' : '<div class="mono">' + esc(p.id) + "</div>") + "</div></div>" +
       '<button class="tzoom" data-enter aria-label="Enter experience">' + IC.mag + "</button>" +
-      '<div class="stitle"><span class="l"><span class="it">' + esc(p.title) + '</span></span><span class="l s2"><span class="it">' + esc(sl.short || sl.name) + " " + pad(si + 1) + "<sup>↗</sup></span></span></div>" +
+      '<div class="stitle"><span class="l"><span class="it">' + esc(p.shortTitle || p.title) + '</span></span><span class="l s2"><span class="it">' + esc(sl.short || sl.name) + " " + pad(si + 1) + "<sup>↗</sup></span></span></div>" +
       '<div class="smeta m1"><div class="it">' + (p.meta1 || [p.category, p.placeholder ? "Placeholder" : "", p.year || ""]).map(esc).join("<br>") + "</div></div>" +
       '<div class="smeta m2"><div class="it">' + (p.meta2 || ["Project " + p.id, p.slides.length + " screen", ""]).map(esc).join("<br>") + "</div></div>" +
       '<div class="shint"><b></b>Swipe ⟷<br><b></b>Scroll ↕</div>' +
