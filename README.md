@@ -61,3 +61,10 @@ Both games can keep their progress in one free Supabase account, so it follows t
    (the one at the top of this folder — both games read it).
 4. Optional: Authentication → Sign In / Providers → Email → turn off "Confirm email" so players can sign in straight away.
 Leave `cloud-config.js` empty and the games work exactly as before, saving in the browser only.
+
+### Mobile-number sign-in (optional)
+Players can also sign in with a one-time code sent by SMS. It needs an SMS provider (Twilio, Vonage, MessageBird or
+TextLocal — each text is billed by that provider):
+1. Supabase → Authentication → Sign In / Providers → Phone → turn on, choose the provider and paste its keys.
+2. In `cloud-config.js` set `phone: true` (and `country`, default "91", for numbers typed without a +code).
+A mobile account and an email account are separate accounts — each player should stick to one.
