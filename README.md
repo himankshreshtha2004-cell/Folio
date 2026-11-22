@@ -51,3 +51,13 @@ and keep the same names. Projects with only one image get an automatic night ver
 - Inside a project: the bar at the bottom left (Portfolio · ‹ 01 / 05 › · collapse),
   drag in from the left or right screen edge, Esc to return, Alt + ← / → to switch projects.
 - Links: `#intro`, `#project-03`, `#project-01-screen-4`, `#experience-01`.
+
+
+## Cloud save (Pocket Universe + The Impossible Path)
+Both games can keep their progress in one free Supabase account, so it follows the player to any device.
+1. Create a free project at https://supabase.com.
+2. SQL Editor → New query → paste everything from `cloud-setup.sql` → Run.
+3. Project Settings → API: copy the Project URL and the anon / publishable key into `cloud-config.js`
+   (the one at the top of this folder — both games read it).
+4. Optional: Authentication → Sign In / Providers → Email → turn off "Confirm email" so players can sign in straight away.
+Leave `cloud-config.js` empty and the games work exactly as before, saving in the browser only.
